@@ -25,7 +25,8 @@ jobs:
         run: |
           set -euxo pipefail
           mkdir -p _site/vendor
-          cp index.html favicon.svg .nojekyll _site/
+          cp index.html favicon.svg _site/
+          touch _site/.nojekyll
           curl --fail --location --retry 3 --silent --show-error \
             https://raw.githubusercontent.com/mrdoob/three.js/r160/build/three.module.min.js \
             --output _site/vendor/three.module.min.js
