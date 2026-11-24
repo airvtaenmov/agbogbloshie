@@ -3389,7 +3389,7 @@ m1uscSk/n7ik11rF1Ioea6LnsM1OpFMwBIbB6c1zOjwybZFIb2NM+JBfu1//2Q==`
     color:0xe5c79d,coreColor:0xffe9be,energy:1.65,kind:'warm',flicker:.14,jitter:.07,spark:.11,hazeBase:.15});
   const SOUND_STORAGE='agbog-machine-sound-v1';
   const audioToggle=document.getElementById('audio-toggle');
-  let savedSound=false;try{savedSound=localStorage.getItem(SOUND_STORAGE)==='1';}catch{}
+  let savedSound=true;try{savedSound=localStorage.getItem(SOUND_STORAGE)!=='0';}catch{}
   const audioState={enabled:savedSound,ctx:null,master:null,hum:null,hum2:null,crtTone:null,hiss:null,crackle:null,crackleGain:null,tubeNodes:[],ready:false,started:false};
   function audioNoiseBuffer(ctx,duration=.8){
     const length=Math.max(1,Math.floor(ctx.sampleRate*duration));
